@@ -1,0 +1,10 @@
+theme: minima
+title: Ansible & Env
+description: Ansible playbooks и окружение
+
+# Какие страницы показывать в верхнем меню (minima).
+# Если не указать, minima будет автоматически добавлять почти все страницы с front matter.
+header_pages:
+  - venv.md
+  - giuide.md
+  - presentation-my-role.md
