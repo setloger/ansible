@@ -115,6 +115,8 @@ ansible-playbook -i inventories/<env>/inv.yml play-reboot-hosts.yml --limit 'hos
 
 ## Дальше (куда развивать)
 
-- **Групповой порядок**: явные группы/порядок ребута под конкретные кластера (например, workers/ingress/masters).
-- **Альтернативные уведомления**: webhook в корпоративные системы, в мессенджеры (если SMTP закрыт).
+- **Kubernetes‑режим** : drain → reboot → uncordon, проверки kubectl get node, порядок групп (reboot_group_order), отдельные политики для групп (db/redis/infra) (почему бы нет)
+- **Тестирование**: Molecule/CI‑проверки (как вариант, интеграция в А-платформа)
+- **Наблюдаемость** кроме почты: webhook/messenger, интеграция с мониторингом (как варианта)
+
 

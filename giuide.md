@@ -21,6 +21,7 @@ description: Ключевые концепции Ansible
 - [Структура Playbook](#структура-playbook)
 - [Ключевые модули (FQCN)](#ключевые-модули-fqcn)
 - [Roles](#roles)
+- [Ускорение выполнения плейбука](#ускорение-выполнения-плейбука)
 - [Приоритет переменных (10 уровней)](#приоритет-переменных-10-уровней)
 - [Loops и Conditionals](#loops-и-conditionals)
   - [loop](#loop)
@@ -176,7 +177,7 @@ Playbook обычно состоит из одного или нескольки
 
 ## Roles
 
-Создание роли:
+Инициализаця структуры роли:
 
 ```bash
 ansible-galaxy role init roles/nginx
@@ -188,6 +189,20 @@ ansible-galaxy role init roles/nginx
 - `roles/<name>/handlers/main.yml`: handler’ы
 - `roles/<name>/defaults/main.yml`: **дефолты** (низкий приоритет, удобно переопределять)
 - `roles/<name>/vars/main.yml`: **vars** (высокий приоритет, переопределять нежелательно)
+
+---
+
+## Ускорение выполнения плейбука
+
+- Увеличить forks (по умолчанию 5) в ansible.cfg
+
+- Включить pipelining = true — уменьшает количество SSH-соединений
+
+- Использовать strategy: free — хосты не ждут друг друга
+
+- Включить fact_caching — кэшировать факты между запусками
+
+- Отключить сбор фактов где не нужно: gather_facts: false
 
 ---
 
