@@ -64,7 +64,7 @@ permalink: /presentation-my-role/
 Где отправлять (важно):
 
 - `notify_delegate_hosts`: список хостов, с которых пробуем отправить письмо.
-- `notify_delegate_user` / `notify_delegate_user_map`: логины для delegate.
+- `notify_delegate_user` : логин для delegate.
 
 Формат:
 
