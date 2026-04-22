@@ -13,7 +13,7 @@ permalink: /venv/
 - [Разворачивание Python venv для Ansible-проекта](#разворачивание-python-venv-для-ansible-проекта)
 - [Содержание](#содержание)
 - [Структура хорошего проекта с venv](#структура-хорошего-проекта-с-venv)
-  - [Онбординг нового участника команды — 3 команды:](#онбординг-нового-участника-команды--3-команды)
+  - [Онбординг нового участника команды](#онбординг-нового-участника-команды)
 - [Требования](#требования)
 - [1. Установка python3-venv](#1-установка-python3-venv)
 - [2. Создание виртуального окружения](#2-создание-виртуального-окружения)
@@ -30,10 +30,11 @@ permalink: /venv/
 - [Если нужно пересоздать окружение с нуля](#если-нужно-пересоздать-окружение-с-нуля)
 - [Итог](#итог)
 
-
 ---
+
 ## Структура хорошего проекта с venv
 
+```text
 ansible-project/
 ├── requirements.txt        # pip-зависимости (ansible-core, jinja2...)
 ├── requirements.yml        # ansible-galaxy коллекции
@@ -41,12 +42,15 @@ ansible-project/
 ├── ansible.cfg
 ├── inventory/
 └── playbooks/
+```
 
-### Онбординг нового участника команды — 3 команды:
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-ansible-galaxy collection install -r requirements.yml
+### Онбординг нового участника команды
 
+Три команды:
+
+- python3 -m venv .venv && source .venv/bin/activate
+- pip install -r requirements.txt
+- ansible-galaxy collection install -r requirements.yml
 
 ---
 
